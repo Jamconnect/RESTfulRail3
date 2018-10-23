@@ -1,0 +1,57 @@
+Author: John McDougall       Name git: RESTfulRail3
+______                       ________
+
+Subject: Build a RESTful JSON API With Rail 3
+_______
+
+1. Gemfile
+__________
+
+set TEMP=C:\Users\Jamconnect\AppData\Local\Temp
+set TMP=C:\Users\Jamconnect\AppData\Local\Temp
+
+gem install wdm
+   Add Gemfile: gem 'wdm', '>= 0.1.0'
+bundle install
+
+
+2. Get auth token
+_________________
+
+rails db:migrate RAILS_ENV=test
+bundle exec rspec
+
+ALL GREENS !!
+
+3.Pagination
+____________
+
+bundle update rake
+rake db:seed
+
+DONE.
+
+
+
+
+http :3000/signup name=Pienaar email=mom@email.com password=boohoo password_confirmation=boohoo
+
+http :3000/signup name=Pienaar email=mom@email.com password=boohoo password_confirmation=boohoo
+HTTP/1.1 201 Created
+Cache-Control: max-age=0, private, must-revalidate
+Content-Type: application/json; charset=utf-8
+ETag: W/"4e6c33d638348a026728066e3e39c4a5"
+Transfer-Encoding: chunked
+X-Request-Id: d4a3c44d-2dc3-49fa-9ac5-6d188b942659
+X-Runtime: 0.607953
+
+{
+    "auth_token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NDAzMDQwNzd9.GrNM-bIG6oASZaQFnvIYn6jEbOJ2sqM8KKoavIk4SJk",
+    "message": "Account created successfully"
+}
+
+http :3000/todos Accept:"application/vnd.todos.v2+json" Authorization:"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NDAzMDQwNzd9.GrNM-bIG6oASZaQFnvIYn6jEbOJ2sqM8KKoavIk4SJk"
+
+http :3000/todos Accept:"application/vnd.todos.v2+json" Authorization:"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NDAzMDQwNzd9.GrNM-bIG6oASZaQFnvIYn6jEbOJ2sqM8KKoavIk4SJk"
+
+http POST :3000/todos/1/items name="Listen to Don Giovanni" Accept:"application/vnd.todos.v1+json" Authorization:"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NDAzMDQwNzd9.GrNM-bIG6oASZaQFnvIYn6jEbOJ2sqM8KKoavIk4SJk"
